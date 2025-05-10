@@ -1,11 +1,40 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import React from 'react';
+import Header from '@/components/Header';
+import SummaryCard from '@/components/SummaryCard';
+import BankAccountList from '@/components/BankAccountList';
+import IncomeExpenseChart from '@/components/IncomeExpenseChart';
+import CommissionCharts from '@/components/CommissionCharts';
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
+    <div className="min-h-screen bg-gray-50">
+      <Header />
+      <div className="container mx-auto p-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+          <SummaryCard 
+            title="Entradas Previstas" 
+            amount="R$ 50.000" 
+            type="income"
+          />
+          <SummaryCard 
+            title="Saídas Previstas" 
+            amount="R$ 25.000" 
+            type="expense"
+          />
+          <SummaryCard 
+            title="Saldo Final de Caixa Projetado" 
+            amount="R$ 25.000" 
+            type="balance"
+          />
+        </div>
+        
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+          <BankAccountList />
+          <IncomeExpenseChart />
+        </div>
+        
+        <CommissionCharts />
       </div>
     </div>
   );
