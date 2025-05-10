@@ -19,27 +19,27 @@ const BankAccountList = () => {
   ];
 
   return (
-    <Card className="w-full">
-      <CardHeader>
-        <CardTitle>Total por Conta Bancária</CardTitle>
+    <Card className="w-full h-fit">
+      <CardHeader className="py-2">
+        <CardTitle className="text-base">Total por Conta Bancária</CardTitle>
       </CardHeader>
-      <CardContent>
-        <ul className="space-y-4">
+      <CardContent className="p-2">
+        <ul className="space-y-2">
           {accounts.map((account) => (
-            <li key={account.name} className="flex items-center justify-between p-2 border-b">
+            <li key={account.name} className="flex items-center justify-between p-1 border-b text-sm">
               <div className="flex items-center gap-2">
-                <div className="w-10 h-10 rounded bg-slate-200 flex items-center justify-center text-xs font-bold">
+                <div className="w-8 h-8 rounded bg-slate-200 flex items-center justify-center text-xs font-bold">
                   {account.name.substring(0, 2).toUpperCase()}
                 </div>
-                <span>{account.name}</span>
+                <span className="text-sm">{account.name}</span>
               </div>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-1">
                 {account.balance ? (
                   <span className="font-medium">R$ {account.balance}</span>
                 ) : (
                   <span>-</span>
                 )}
-                {account.alert && <AlertCircle className="h-5 w-5 text-red-500" />}
+                {account.alert && <AlertCircle className="h-4 w-4 text-red-500" />}
               </div>
             </li>
           ))}
